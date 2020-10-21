@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { StatusBar } from 'expo-status-bar';
 import {
   Keyboard,
   TouchableOpacity,
@@ -56,7 +57,12 @@ export default function App() {
             field="name"
             validate={validate}
             validateOnBlur
-            initialValue="foobar" />
+            initialValue="Joe" />
+          <InformedTextInput
+            field="last"
+            validate={validate}
+            validateOnBlur
+            initialValue="puzzo" />
           <View style={styles.inputContainer}>
             <TouchableOpacity
               onPress={apiRef.current && apiRef.current.submitForm}
@@ -66,6 +72,7 @@ export default function App() {
           </View>
         </View>
       </FormProvider>
+      <StatusBar style="auto" />
     </View>
   );
 }
